@@ -1,8 +1,16 @@
-<h4>All Posts</h4>
-<hr>
-<% @posts.each do |post| %>
-	<h4><%= link_to post.title, post %></h4>
-	<p>Published <%= post.created_at.strftime("%B, %d, %Y")%></p>
-<% end %>
-<br>
-<%= link_to "New Post", new_post_path %>
+<div class="row">
+	<% @posts.each do |post| %>
+		<div class="col-md-4 col-sm-4">
+			<div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+			  <div class="card-body">
+			    <h4 class="card-title"><%= post.title %></h4>
+			    <p class="card-text">Published <%= post.created_at.strftime("%B, %d, %Y")%></p>
+			    <%= link_to "Read More", :class=>'btn btn-primary'%>
+			  </div>
+			</div>
+			<br>
+		</div>
+	<% end %>
+</div>
+

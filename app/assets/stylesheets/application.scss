@@ -1,1 +1,15 @@
 @import "bootstrap";
+@import "variables";
+body{
+	margin-top: 75px;
+}
+.navbar-dark{
+	background-image: linear-gradient(to right,$blue, $pink) !important;
+	color: $white !important;
+}
+.navbar-brand{
+	font-weight: bold;
+}
+.navbar-nav .nav-link {
+    color: #fff !important;
+}
