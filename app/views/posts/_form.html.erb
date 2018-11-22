@@ -1,19 +1,27 @@
 <%= form_for @post,html: { multipart: true } do |f| %>
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</p>
+	<div class="form-group">
+		<p>
+			<%= f.label :title %><br>
+			<%= f.text_field :title, :class=>"form-control" %>
+		</p>
+	</div>
+
+	<div class="form-group">
+		<p>
+			<%= f.label :image %><br>
+			<%= f.file_field :image %>
+		</p>
+	</div>
+	
+	<div class="form-group">
+		<p>
+			<%= f.label :body %><br>
+			<%= f.text_area :body, :class=>'form-control', :rows=>'8' %>
+		</p>
+	</div>
 
 	<p>
-		<%= f.label :image %><br>
-		<%= f.file_field :image %>
-	</p>
-	<p>
-		<%= f.label :body %><br>
-		<%= f.text_area :body %>
-	</p>
-
-	<p>
-		<%= f.submit %>
+		<%= f.submit "Submit" , :class=>'btn btn-success'%>
+		<%= link_to "Cancel", root_path , :class=>'btn btn-secondary'%>
 	</p>
 <% end %>
