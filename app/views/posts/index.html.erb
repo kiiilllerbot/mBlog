@@ -2,11 +2,11 @@
 	<% @posts.each do |post| %>
 		<div class="col-md-4 col-sm-4">
 			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+					<%= image_tag post.image.url(:medium)%>
 			  <div class="card-body">
-			    <h4 class="card-title"><%= post.title %></h4>
+			    <h5 class="card-title"><%= truncate(post.title, length:25) %></h5>
 			    <p class="card-text">Published <%= post.created_at.strftime("%B, %d, %Y")%></p>
-			    <%= link_to "Read More", :class=>'btn btn-primary'%>
+			    <%= link_to "Read More", post, :class=>'btn btn-block btn-primary custom'%>
 			  </div>
 			</div>
 			<br>
