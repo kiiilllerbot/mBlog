@@ -7,7 +7,9 @@
 	<div class="col-md-10 col-sm-10">
 		<div class="comment-wrapper">
 			<strong><%= comment.name %></strong>
+			<% if user_signed_in?%>
 			| <%= link_to "Delete", [comment.post, comment],:class=>'badge badge-danger', method: :delete, data:{confirm:'Are you sure?'}%>
+			<% end %>
 			<br>
 			<p class="date"><%= time_ago_in_words(comment.created_at)%> Ago<br></p>
 			<p class="text-justify"><%= comment.body %></p><br>

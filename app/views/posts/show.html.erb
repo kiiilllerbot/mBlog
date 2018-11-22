@@ -3,9 +3,11 @@
 <br>
 <h4><%= @post.title %></h4>
 <p><%= time_ago_in_words(@post.created_at)%> ago
+	<% if user_signed_in?%>
 	<%= link_to "Edit", edit_post_path, :class=>'badge badge-info' %>
 	<%= link_to "Delete", post_path, method: :delete, data:{confirm:'Are you sure?'},:class=>'badge badge-danger' %>
 	<%= link_to "Back", root_path, :class=>'badge badge-success' %>
+	<% end %>
 </p>
 <p class="text-justify"><%= @post.body %></p>
 <hr>
