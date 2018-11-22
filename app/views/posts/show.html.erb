@@ -1,12 +1,15 @@
+<br>
 <h4><%= @post.title %></h4>
-<p>About <%= time_ago_in_words(@post.created_at)%> Ago
-	| <%= link_to "Edit", edit_post_path %>
-	| <%= link_to "Delete", post_path, method: :delete, data:{confirm:'Are you sure?'} %>
-	| <%= link_to "Back", root_path %>
+<p><%= time_ago_in_words(@post.created_at)%> ago
+	<%= link_to "Edit", edit_post_path, :class=>'badge badge-info' %>
+	<%= link_to "Delete", post_path, method: :delete, data:{confirm:'Are you sure?'},:class=>'badge badge-danger' %>
+	<%= link_to "Back", root_path, :class=>'badge badge-success' %>
 </p>
-<p><%= @post.body %></p>
+<p class="text-justify"><%= @post.body %></p>
 <hr>
-<p><%= @post.comments.count %> Comments</p>
+<strong><%= @post.comments.count %> Comments</strong>
+<hr>
 <%= render @post.comments %>
-<p>Add a new comment:</p>
+<hr>
+<p><strong>Add a new comment:</strong></p>
 <%= render 'comments/form'%>

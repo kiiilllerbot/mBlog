@@ -1,3 +1,16 @@
-<p><strong><%= comment.name %></strong></p>
-<p>About <%= time_ago_in_words(comment.created_at)%> Ago</p>
-<p><%= comment.body %></p>
+<div class="row" style=" margin-left: 25px">
+	<div class="divide">
+		<div class="col-md-1 col-sm-1">
+			<p class="divider badge badge-success"><span class="d-none">I</span></p>
+		</div>
+	</div>
+	<div class="col-md-10 col-sm-10">
+		<div class="comment-wrapper">
+			<strong><%= comment.name %></strong>
+			| <%= link_to "Delete", [comment.post, comment],:class=>'badge badge-danger', method: :delete, data:{confirm:'Are you sure?'}%>
+			<br>
+			<p class="date"><%= time_ago_in_words(comment.created_at)%> Ago<br></p>
+			<p class="text-justify"><%= comment.body %></p><br>
+		</div>
+	</div>
+</div>
