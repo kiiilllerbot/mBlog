@@ -1,0 +1,7 @@
+<h4><%= @post.title %></h4>
+<p>About <%= time_ago_in_words(@post.created_at)%> Ago
+	| <%= link_to "Edit", edit_post_path %>
+	| <%= link_to "Delete", post_path, method: :delete, data:{confirm:'Are you sure?'} %>
+	| <%= link_to "Back", root_path %>
+</p>
+<p><%= @post.body %></p>

@@ -1,2 +1,8 @@
 <h4>All Posts</h4>
 <hr>
+<% @posts.each do |post| %>
+	<h4><%= link_to post.title, post %></h4>
+	<p>Published <%= post.created_at.strftime("%B, %d, %Y")%></p>
+<% end %>
+<br>
+<%= link_to "New Post", new_post_path %>
